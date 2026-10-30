@@ -1,1 +1,129 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Slideshow</title>
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  >
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: Arial, sans-serif;
+    }
+    .portfolio-slider {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .swiper {
+      width: 100%;
+      height: auto;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 750px;
+      object-fit: contain;
+    }
+    /* Navigation arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+      background: rgba(0, 0, 0, 0.35);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    /* Pagination dots */
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.65;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+    @media (max-width: 600px) {
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 34px;
+        height: 34px;
+      }
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-slider">
+<!-- Slideshow -->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="images/slide1.jpg" alt="Project image 1">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/slide2.jpg" alt="Project image 2">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/slide3.jpg" alt="Project image 3">
+    </div>
+    <div class="swiper-slide">
+      <img src="images/slide4.jpg" alt="Project image 4">
+    </div>
+  </div>
+  <!-- Navigation arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <!-- Pagination dots -->
+  <div class="swiper-pagination"></div>
+</div>
+  </div>
+  <!-- Swiper JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      speed: 700,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+    });
+  </script>
+</body>
+</html>
